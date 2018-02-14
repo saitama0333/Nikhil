@@ -1,0 +1,16 @@
+docker version
+docker info
+docker ps --> list running containers
+docker ps -a (continaers which ran earlier and now exited)
+sudo docker images
+sudo docker run -t -i 8095ae5163c9 bash
+
+
+docker pull ubuntu --> pulls latest from docker hub
+docker pull ubuntu:14.04 --> pulls version specific image
+docker rm ubuntu:14.04 --> RemoveImage
+
+
+
+
+

@@ -1,0 +1,62 @@
+we follow guidelines from datastax(cassandra) for Production systems or other changes which the developer suggests
+
+1) commit log:
+commit log uses sequential write
+biggest performance gain for write is to put commit log in a separate disk drive
+IO provisioned
+cassandra.yaml
+
+
+*****performance:****
+1)sync clocks 
+Datastax rewrites a column only if there is another version whose timestamp is more recent
+
+2)tcp settings
+
+prevent connection timeout
+	/etc/sysctl.conf
+net.ipv4.tcp_keepalive_time=60 
+net.ipv4.tcp_keepalive_probes=3 
+net.ipv4.tcp_keepalive_intvl=10
+
+
+Apache Cassandra is a distributed database management system. Large amounts of data can be spread across a cluster of hundreds of nodes
+probe constantly monitors the internal performance and resource usage throughout a node in a Cassandra cluster
+
+To the handle thousands of concurrent connections used by the database, change these Linux kernel settings:
+/etc/sysctl.conf
+sysctl -p --> reload sysctl settings
+
+net.core.rmem_max=16777216 
+net.core.wmem_max=16777216 
+net.core.rmem_default=16777216 
+net.core.wmem_default=16777216 
+net.core.optmem_max=40960 
+net.ipv4.tcp_rmem=4096 87380 16777216 
+net.ipv4.tcp_wmem=4096 65536 16777216
+
+
+
+/etc/security/limits.conf file:
+<cassandra_user> - memlock unlimited
+<cassandra_user> - nofile 100000
+<cassandra_user> - nproc 32768
+<cassandra_user> - as unlimited
+
+
+$ cat /proc/pid/limits
+
+JMX is a Java technology that supplies tools for managing and monitoring Java applications and services
+
+
+listen_address
+    Default: localhost The IP address or hostname that the database binds to for connecting this node to other nodes.
+Warning:
+
+    Never set listen_address to 0.0.0.0.
+    Do not set values for both listen_address and listen_interface on the same node
+
+clearing cassandra data:
+$ sudo rm -rf /var/lib/cassandra/*
+
+

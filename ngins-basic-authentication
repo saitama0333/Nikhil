@@ -1,0 +1,27 @@
+Ref URL:
+https://www.nginx.com/resources/admin-guide/restricting-access-auth-basic/
+
+
+sudo apt-get install apache2-utils
+
+sudo htpasswd -c /etc/apache2/.htpasswd user1
+
+adding first user:
+sudo htpasswd -c /etc/apache2/.htpasswd gooru
+password:netops@gooru40
+
+adding second user:
+sudo htpasswd /etc/apache2/.htpasswd pune_team
+passwd:pune_team@goorU
+
+
+netops@gooru40
+
+in the config file, edit below entries:
+
+
+      location / {
+           auth_basic “Administrator’s Area”;
+           auth_basic_user_file /etc/apache2/.htpasswd;
+      }
+

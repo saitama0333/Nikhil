@@ -1,0 +1,26 @@
+Git:
+1) working directory
+2) stage directory -git add
+3) local directory --git commit
+
+
+Clone repo on your local machine:
+
+git init --initialise git 
+#git config --global user.name "Nikhil Yadav"
+#git config --global user.email "nikhil.yadav@blazeclan.com"
+
+#git config --global --list 
+	verify your configs
+
+
+#touch sample.txt
+git add sample.txt
+	will add sample.txt only
+#touch a b c d 
+#git add . 
+	Will add all the files
+#git commit -m "first commit"
+	enter commit for your changes
+
+#git push -u origin master

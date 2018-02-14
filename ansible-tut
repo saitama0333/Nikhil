@@ -1,0 +1,15 @@
+#sudo hostnamectl set-hostname ansible-control
+#hostnamectl status
+#yum repolist
+
+We need to install EPEL package--(extra package for Enterprise Linux)
+#wget http://ftp.riken.jp/Linux/fedora/epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm
+#sudo rpm -i epel-release-7-11.noarch.rpm
+#sudo yum update
+#sudo yum install ansible
+#ansible localhost -m ping
+
+
+-open source
+-highly scalable
+-agent less

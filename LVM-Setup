@@ -1,0 +1,15 @@
+1) Attach 500 Gb EBS to instance 
+2) sudo fdisk -l (check for device)
+3) sudo pvcreate /dev/xvdf
+4) sudo pvs (check if its created) or sudo pvdisplay
+5) sudo vgcreate /dev/xvdf (create volume grp )
+5) sudo vgs or sudo vgdisplay
+6)sudo lvcreate -L 499G -n lv_goorulabs vg_goorulabs
+7)sudo lvs or sudo lvdisplay
+8)mkdir /goorulabs
+9) sudo mkfs -t ext4 /dev/vg_goorulabs/lv_goorulabs
+10)sudo vi /etc/fstab
+/dev/mapper/vg_goorulabs-lv_goorulabs /goorulabs ext4 defaults 0 0
+11) sudo mount -a
+12) df -hT 
+

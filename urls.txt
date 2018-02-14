@@ -1,0 +1,453 @@
+|------------------------------------------------------------------------------------------|
+|	Site to refer WHAT can be automated in aws ac					   |
+|------------------------------------------------------------------------------------------|
+http://www.skeddly.com/
+
+
+|------------------------------------------------------------------------------------------|
+|	IAM billing access								   |
+|------------------------------------------------------------------------------------------|
+https://blogs.aws.amazon.com/security/post/Tx2255RUMJGC96Y/Don-t-Forget-to-Enable-Access-to-the-Billing-Console --> iam billing access
+http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html
+http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#ExampleAllowAllDenyBilling
+
+
+
+|--------------------------------------------------------------------------------------------|
+|	s3 bucket policy v/s iam policy 					             |
+|--------------------------------------------------------------------------------------------|
+http://blogs.aws.amazon.com/security/post/TxPOJBY6FE360K/IAM-policies-and-Bucket-Policies-and-ACLs-Oh-My-Controlling-Access-to-S3-Resourc
+
+
+|--------------------------------------------------------------------------------------------|
+|	Configuring two websites on one ubuntu server (different ports) "virtual hosting"    |
+|--------------------------------------------------------------------------------------------|
+https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts
+   **** in /etc/apache2/ports.conf --> add the ports you want to listen eg. Listen 8080.
+
+
+|--------------------------------------------------------------------------------------------|
+|	steps for Creating Custom metric for cloudwatch					     |
+|--------------------------------------------------------------------------------------------|
+http://lustforge.com/2012/07/22/custom-cloudwatch-metric-tutorial-freememory-and-cron/
+http://blogs.clogeny.com/custom-metrics-in-amazon-cloudwatch/
+http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html#send_logs_to_cwl  --> windows
+
+
+|--------------------------------------------------------------------------------------------|
+|	Info about ec2 security groups							     |
+|--------------------------------------------------------------------------------------------|
+http://support.rightscale.com/12-Guides/Dashboard_Users_Guide/Clouds/AWS_Regions/EC2_Security_Groups/Concepts/About_EC2_Security_Groups
+
+
+|--------------------------------------------------------------------------------------------|
+|Active Directory (Configuration, user creation and assigning Fine Grained Password Policies)|
+|--------------------------------------------------------------------------------------------|
+http://social.technet.microsoft.com/wiki/contents/articles/12370.set-up-your-first-root-windows-server-2012-domain-controller-step-by-step.aspx  --> Creating AD
+https://www.youtube.com/watch?v=DrNwJraGfjQ  --> creating User A/C
+https://4sysops.com/archives/fine-grained-password-policy-in-windows-server-2012/  --> FGPP
+http://www.adamfowlerit.com/2014/01/29/password-expiry-notification-script/  --> passwrd expire notification on email, script
+
+
+|--------------------------------------------------------------------------------------------|
+|	AWs elastic Beanstalk, Cloud formation, OpsWorks comparision/difference		     |
+|--------------------------------------------------------------------------------------------|
+http://www.slideshare.net/AmazonWebServices/deploy-manage-and-scale-your-apps
+
+
+|--------------------------------------------------------------------------------------------|
+|	Docker Useful urls								     |
+|--------------------------------------------------------------------------------------------|
+http://blog.thoward37.me/articles/where-are-docker-images-stored/
+https://docs.docker.com/userguide/
+
+
+
+
+http://www.slideshare.net/dattudharanikota/cloud-computing-ppt-14857120 --> cloud computing ppt
+
+
+|---------------------------------------------------------------------------------------------|
+|	making swap file 		 						      |
+|---------------------------------------------------------------------------------------------|
+http://www.techknowjoe.com/article/create-swap-file-your-ec2-instance-storage-space
+http://stackoverflow.com/questions/17173972/how-do-you-add-swap-to-an-ec2-instance
+https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Deployment_Guide/s2-swap-creating-file.html -->rhel
+http://www.tldp.org/HOWTO/Partition/setting_up_swap.html --> useful swap commands
+http://www.techotopia.com/index.php/Adding_and_Managing_RHEL_6_Swap_Space --> useful swap commands
+http://askubuntu.com/questions/126018/adding-a-new-swap-file-how-to-edit-fstab-to-enable-swap-after-reboot
+https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Deployment_Guide/s2-swap-creating-lvm2.html --> rhel swap lvm
+https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Tuning_and_Optimizing_Red_Hat_Enterprise_Linux_for_Oracle_9i_and_10g_Databases/sect-Oracle_9i_and_10g_Tuning_Guide-Swap_Space-Checking_Swap_Space_Size_and_Usage.html 
+
+
+|----------------------------------------------------------------------------------------------|
+|	Apache hardening basic steps							       |
+|----------------------------------------------------------------------------------------------|
+http://fm4dd.com/security/apache-hardening-top-ten.htm
+http://www.ansoncheunghk.info/article/7-simple-steps-harden-apache-and-php-linux
+
+
+|----------------------------------------------------------------------------------------------|
+|	Sendmail on RHEL6								       |
+|----------------------------------------------------------------------------------------------|
+http://tecadmin.net/install-sendmail-server-on-centos-rhel-server/
+
+
+|----------------------------------------------------------------------------------------------|
+|	Configure Postfix to relay through Smtp server					       |
+|----------------------------------------------------------------------------------------------|
+https://www.zulius.com/how-to/set-up-postfix-with-a-remote-smtp-relay-host/ --> postfix smtp relay server
+http://docs.aws.amazon.com/ses/latest/DeveloperGuide/postfix.html
+https://rtcamp.com/tutorials/linux/ubuntu-postfix-gmail-smtp/
+
+
+|------------------------------------------------------------------------------------------------|
+|	Creating TRUST between two domains							 |
+|------------------------------------------------------------------------------------------------|
+https://www.youtube.com/watch?v=MENYdfNVFgg
+http://technet.microsoft.com/en-us/library/cc771580.aspx
+
+
+|-------------------------------------------------------------------------------------------------|
+|	SMTP Relay										  |
+|-------------------------------------------------------------------------------------------------|
+http://community.spiceworks.com/topic/560903-relay-mail-through-office-365-or-directly-from-linux-server
+
+############   postfix thru relay server   ##########################
+http://www.howtoforge.com/postfix_relaying_through_another_mailserver
+
+###########    SMTP over TLS steps         ##############################
+http://www.howtoforge.com/howto_sendmail_smtp_auth_tls  --> post from 2004
+http://cromwell-intl.com/linux/sendmail-ssl.html  --> easy steps; year unknown
+
+
+|--------------------------------------------------------------------------------------------------|
+|	OTRS installation									   |
+|--------------------------------------------------------------------------------------------------|
+
+	https://help.ubuntu.com/community/OTRS --> install steps
+	https://github.com/mbeijen/otrs/blob/master/INSTALL.md --> activating /opt/otrs/Kernel/COnfig.pm
+	http://otrs.github.io/doc/manual/admin/3.2/en/html/administration.html --> config agents ques,etc.
+#############  refer to OTRS acurate install steps text file.  #########################
+
+
+|---------------------------------------------------------------------------------------------------|
+|	Installing and configuring GIT								    |
+|---------------------------------------------------------------------------------------------------|
+https://help.ubuntu.com/lts/serverguide/git.html --> install git 
+https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04#HowToSetUpGit --> install git on ubuntu 14.04
+https://www.digitalocean.com/community/tutorials/how-to-use-git-effectively --> use of git
+
+
+
+http://ithubinfo.blogspot.in/2013/07/how-to-increase-ulimit-open-file-and.html --> increasing hard and soft limit in linux.
+
+
+
+http://docs.mongodb.org/manual/tutorial/install-mongodb-on-linux/ --> install standalone mongodb server on linux
+
+
+
+|----------------------------------------------------------------------------------------------------|
+|	Integration S3 and cloudfront with wordpress and joomla					     |
+|----------------------------------------------------------------------------------------------------|
+http://www.webdesignerdepot.com/2013/08/how-to-take-wordpress-to-the-cloud-with-amazon-s3-cloudfront/ --> w3 total chache for wordpress
+https://www.corephp.com/joomla-products/jomcdn -->joomla
+http://www.joomlart.com/joomla/extensions/ja-amazon-s3 -->joomla
+
+
+|-----------------------------------------------------------------------------------------------------|
+|	Pfsense Squid and Squid guard								      |
+|-----------------------------------------------------------------------------------------------------|
+http://www.howtoforge.com/pfsense-squid-squidguard-traffic-shaping-tutorial 
+https://doc.pfsense.org/index.php/SquidGuard_package --> squid guard package details
+
+
+
+|-----------------------------------------------------------------------------------------------------|
+|	Installing PiP on windows7 								      |
+|-----------------------------------------------------------------------------------------------------|
+http://stackoverflow.com/questions/4750806/how-to-install-pip-on-windows
+
+
+
+|-----------------------------------------------------------------------------------------------------|
+|	Installing & configuring Graylog2 on ubuntu						      |
+|-----------------------------------------------------------------------------------------------------|
+https://www.digitalocean.com/community/tutorials/how-to-install-graylog2-and-centralize-logs-on-ubuntu-14-04
+https://developer.s24.com/blog/tomcat-log-management-with-logstash-and-graylog2.html --> Tomcat logs to Graylog2
+https://www.graylog2.org/how-it-works--> working of graylog2
+http://everythingshouldbevirtual.com/ubuntu-12-04-graylog2-installation
+
+
+
+|-------------------------------------------------------------------------------------------------------|
+|	Installing Logstash with Kibana, ElasticSearch													    |
+|-------------------------------------------------------------------------------------------------------|
+https://www.digitalocean.com/community/tutorials/how-to-use-logstash-and-kibana-to-centralize-and-visualize-logs-on-ubuntu-14-04?comment=14209  --> Installation
+### for reference :
+http://www.elasticsearch.org/blog/playing-http-tricks-nginx/
+http://stackoverflow.com/questions/23909960/elasticsearch-connection-refused-while-connecting-to-upstream
+https://rtcamp.com/tutorials/nginx/troubleshooting/emerg-bind-failed-98-address-already-in-use/
+https://github.com/elasticsearch/kibana/blob/kibana3/sample/nginx.conf
+http://www.prajalkulkarni.com/2014/07/installing-elasticsearch-logstash.html
+http://www.dimroc.com/2014/09/28/elasticsearch-nginx/
+
+
+|-------------------------------------------------------------------------------------------------------|
+|	SSL certificate and .pem file with it explanation													|
+|-------------------------------------------------------------------------------------------------------|
+https://www.digicert.com/ssl-support/pem-ssl-creation.htm 
+https://in.godaddy.com/help/generating-a-csr-and-installing-an-ssl-certificate-in-tomcat-4x5x6x7x-5239
+
+
+|-------------------------------------------------------------------------------------------------------|
+|	NFS command and its options																			|
+|-------------------------------------------------------------------------------------------------------|
+http://www.troubleshooters.com/linux/nfs.htm#_Configure_the_NFS_Server
+http://www.tldp.org/LDP/nag2/x-087-2-nfs.mountd.html --> nfs mount options
+http://www.unixmantra.com/2014/03/find-nfs-clients-connected-to-nfs-server.html --> find connected nfs clients (execute this command on server)
+https://wiki.archlinux.org/index.php/NFS/Troubleshooting --> nfs troubleshooting
+http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-client-config-options.html --> soft and hard mounting
+http://www.tecmint.com/manage-multiple-lvm-disks-using-striping-io/ --> striping 
+-->  you can force all access to occur as a single user and group by combining the all_squash, anonuid, and anongid export options. 
+
+
+
+|-------------------------------------------------------------------------------------------------------|
+|	Wordpress config aws some useful stuff																|
+|-------------------------------------------------------------------------------------------------------|
+http://codex.wordpress.org/Changing_The_Site_URL  --> site url and home 
+
+
+
+|-------------------------------------------------------------------------------------------------------|
+|	LVM																									|
+|-------------------------------------------------------------------------------------------------------|
+https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html-single/Logical_Volume_Manager_Administration/#VG_grow --> VG commands
+http://www.tldp.org/HOWTO/LVM-HOWTO/removeadisk.html
+
+
+
+|-------------------------------------------------------------------------------------------------------|
+|	s3fs on centos (login with user root for centos on aws)												|
+|-------------------------------------------------------------------------------------------------------|
+http://tecadmin.net/mount-s3-bucket-centosrhel-ubuntu-using-s3fs/
+
+
+
+|--------------------------------------------------------------------------------------------------------|
+|	S3 with Python											 |
+|--------------------------------------------------------------------------------------------------------|
+http://ls.pwd.io/2013/06/parallel-s3-uploads-using-boto-and-threads-in-python/
+http://boto.readthedocs.org/en/latest/s3_tut.html
+http://cloudacademy.com/blog/data-backup-s3cmd/ --> s3 cmd with windows
+
+
+|-------------------------------------------------------------------------------------------------------|
+|	SSH protocol and the osi layers									|
+|-------------------------------------------------------------------------------------------------------|
+http://www.ibm.com/developerworks/aix/library/au-sshsecurity/ --> ssh on osi layers
+
+
+|-------------------------------------------------------------------------------------------------------|
+|	Custom cloudwatch metrics pricing								|
+|-------------------------------------------------------------------------------------------------------|
+http://aws.amazon.com/cloudwatch/pricing/
+
+
+
+|-------------------------------------------------------------------------------------------------------|
+|	diff btwn systemd and sysVinit									|
+|-------------------------------------------------------------------------------------------------------|
+http://linoxide.com/linux-command/systemd-vs-sysvinit-cheatsheet/
+
+
+
+|------------------------------------------------------------------------------------------------------|
+|	Ec2 instance type comparision								       |
+|------------------------------------------------------------------------------------------------------|
+http://www.ec2instances.info/
+
+
+|-----------------------------------------------------------------------------------------------------|
+|	Ec2 ebs volume limit									      |
+|-----------------------------------------------------------------------------------------------------|
+http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_limits.html
+
+
+|------------------------------------------------------------------------------------------------------|
+|	hdd recovery, copy tools							       	       |
+|------------------------------------------------------------------------------------------------------|
+http://whdd.org/ --> for linux
+http://alternativeto.net/software/mhdd/ --> comparision/alternatives
+http://hddguru.com/software/2005.10.02-MHDD/ --> for windows /dos
+
+
+|------------------------------------------------------------------------------------------------------|
+|	Tool to create AMI (free)								       |
+|------------------------------------------------------------------------------------------------------|
+https://packer.io/  --> Packer is a tool for creating machine and container images for multiple platforms from a single source configuration.
+https://packer.io/docs/builders/amazon.html --> IAM policy to attach the instance with packer
+
+
+
+|------------------------------------------------------------------------------------------------------|
+|	Python MCQs fr knwldge/intw								       |
+|------------------------------------------------------------------------------------------------------|
+http://www.sanfoundry.com/1000-python-questions-answers/
+
+
+
+|-----------------------------------------------------------------------------------------------------|
+| installing SSL certificate on EC2 instance.							      |
+|-----------------------------------------------------------------------------------------------------|
+http://web.onassar.com/blog/2011/04/09/installing-ssl-on-aws-ec2/
+https://www.digicert.com/ssl-certficate-installation-amazon-web-services.htm
+http://jafty.com/blog/installing-godaddy-ssl-certificate-on-amazon-ec2/
+
+
+
+|-----------------------------------------------------------------------------------------------------|
+|	migrate ssl from windows instance to ELB						      |
+|-----------------------------------------------------------------------------------------------------|
+http://www.emind.co/how-to/export-ssl-certificate-from-windows-to-aws-elb
+https://www.openssl.org/related/binaries.html
+https://www.tbs-certificates.co.uk/FAQ/en/openssl-windows.html
+
+
+|------------------------------------------------------------------------------------------------------|
+|	python
+|------------------------------------------------------------------------------------------------------|
+https://docs.python.org/2/library/configparser.html --> config parser
+http://www.tutorialspoint.com/execute_python_online.php --> ol python complier and editor; can build whole project ol.
+https://pypi.python.org/pypi/colorama --> colored o/p
+https://automatetheboringstuff.com/chapter9/
+
+== logging in python ==
+https://docs.python.org/2/howto/logging.html
+http://code.activestate.com/recipes/65215-e-mail-address-validation/
+https://docs.python.org/2/library/logging.handlers.html
+http://www.blog.pythonlibrary.org/2014/02/11/python-how-to-create-rotating-logs/
+
+
+
+|-----------------------------------------------------------------------------------------------------|
+|	SNMP on RHEL										      |
+|-----------------------------------------------------------------------------------------------------|
+http://lifeofageekadmin.com/configure-snmp-for-rhel-6/
+
+
+
+|-----------------------------------------------------------------------------------------------------|
+|	logrotate										      |
+|-----------------------------------------------------------------------------------------------------|
+http://linuxconfig.org/setting-up-logrotate-on-redhat-linux
+
+
+|-----------------------------------------------------------------------------------------------------|
+|	AZURE											      |
+|-----------------------------------------------------------------------------------------------------|
+http://blogs.msdn.com/b/plankytronixx/archive/2014/04/24/i-m-confused-between-azure-cloud-services-and-azure-vms-what-the.aspx
+
+
+
+|-----------------------------------------------------------------------------------------------------|
+|	OPENVPN											      |
+|-----------------------------------------------------------------------------------------------------|
+http://blog.kloud.com.au/2014/04/10/quickly-connect-to-your-aws-vpc-via-vpn/ --> on aws
+https://www.digitalocean.com/community/tutorials/how-to-set-up-an-openvpn-server-on-ubuntu-14-04 --> installation
+https://forums.openvpn.net/topic8243.html  --> solution for error while creating crt files on server
+*** Note : while running client, i.e., openvpngui (windows) , It Must be run with Administrator privileges.
+hence, right click on shrtcut and click on "run as administrator".  ***
+
+
+|---------------------------------------------------------------------------------------------------|
+|	Setting SMTP on Windows									    |
+|---------------------------------------------------------------------------------------------------|
+http://www.vsysad.com/2014/09/setup-and-configure-smtp-server-on-windows-server-2012/
+
+
+|------------------------------------------------------------------------------------------------------|
+|	Cloudtrail with ELK (Elastic search, Logstash, kibana)					       |
+|------------------------------------------------------------------------------------------------------|
+http://logz.io/blog/integrate-aws-cloudtrail-elk-stack/?utm_source=linkedin.com&utm_medium=social&utm_content=integrate_aws_cloudtrail_elk_stack&utm_campaign=blog_post
+
+
+|------------------------------------------------------------------------------------------------------|
+|	Windows MS SQL Cluster									       |
+|------------------------------------------------------------------------------------------------------|
+http://www.pythian.com/blog/how-to-install-a-clustered-sql-server-2012-instance-step-by-step-part-1/
+http://www.pythian.com/blog/how-to-install-a-clustered-sql-server-2012-instance-step-by-step-part-2/
+http://www.pythian.com/blog/how-to-install-a-clustered-sql-server-2012-instance-step-by-step-part-3/
+http://www.pythian.com/blog/how-to-install-a-clustered-sql-server-2012-instance-step-by-step-part-4/
+http://www.slideshare.net/AmazonWebServices/aws-webcast-highly-available-sql-server-on-aws --> ppt for ref.
+https://s3.amazonaws.com/quickstart-reference/microsoft/sql/latest/doc/Microsoft_WSFC_and_SQL_AlwaysOn_Quick_Start.pdf --> On AWS, uses CFTemplate
+
+|------------------------------------------------------------------------------------------------------|
+|	Fabric, cusine										       |
+|------------------------------------------------------------------------------------------------------|
+http://docs.fabfile.org/en/1.10/ --> Documentation
+https://www.digitalocean.com/community/tutorials/how-to-use-fabric-to-automate-administration-tasks-and-deployments
+http://docs.python-guide.org/en/latest/scenarios/admin/ --> system administration
+http://python-openstack.net/what-is-cuisine.html --> cuisine
+https://pypi.python.org/pypi/cuisine
+http://stackful-dev.com/cuisine-the-lightweight-chefpuppet-alternative
+
+https://insights.sei.cmu.edu/devops/2015/03/devops-technologies-fabric-or-ansible.html --> fabricc vs ansible
+
+
+|------------------------------------------------------------------------------------------------------|
+|	Setting default route using route command (kernel's route table)			       |
+|------------------------------------------------------------------------------------------------------|
+http://www.cyberciti.biz/faq/linux-setup-default-gateway-with-route-command/
+
+
+|------------------------------------------------------------------------------------------------------|
+|	New Relic										       |
+|------------------------------------------------------------------------------------------------------|
+https://discuss.newrelic.com/t/getting-started-with-the-platform-installer/842
+
+
+
+|------------------------------------------------------------------------------------------------------|
+|	Screen Command										       |
+|------------------------------------------------------------------------------------------------------|
+https://www.rackaid.com/blog/linux-screen-tutorial-and-how-to/
+http://www.tecmint.com/screen-command-examples-to-manage-linux-terminals/
+
+
+|------------------------------------------------------------------------------------------------------|
+|	DevOps											       |
+|------------------------------------------------------------------------------------------------------|
+https://blog.profitbricks.com/48-best-cloud-tools-for-infrastructure-automation/
+
+
+
+|------------------------------------------------------------------------------------------------------|
+|	IAM policy related									       |
+|------------------------------------------------------------------------------------------------------|
+http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-iam-actions-resources.html
+http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#Condition
+
+
+
+
+|------------------------------------------------------------------------------------------------------|
+|	jenitor monkey (from the netflix)							       |
+|------------------------------------------------------------------------------------------------------|
+http://blog.cloudability.com/netflix-janitor-monkey-cleans-up-the-aws-mess-you-left-behind/
+http://techblog.netflix.com/2013/01/janitor-monkey-keeping-cloud-tidy-and.html
+https://github.com/Netflix/SimianArmy/wiki/Janitor-Settings
+https://github.com/Netflix/SimianArmy/wiki/REST
+
+
+
+|------------------------------------------------------------------------------------------------------|
+|	zabbix											       |
+|------------------------------------------------------------------------------------------------------|
+https://www.rosehosting.com/blog/how-to-install-zabbix-on-an-ubuntu-14-04-vps/ --> server installation
+http://tecadmin.net/install-zabbix-agent-on-ubuntu-and-debian/# --> agent installation
+http://www.zabbix.com/download.php --> agent downloads page
+http://tecadmin.net/add-host-zabbix-server-monitor/--> add host (client) to zabbix console
+https://www.zabbix.com/forum/showthread.php?t=12962

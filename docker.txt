@@ -1,0 +1,14 @@
+sudo yum update
+sudo yum install -y docker
+docker -v
+sudo service docker start
+ps aux|grep docker
+sudo service docker status
+sudo docker pull denny/jenkins_image:latest
+
+docker-compose up -d
+-->when scale is > 1, and a new image is being pulled, using docker-compose up restarts all containers in parallel rather than sequentially.
+
+docker exec -it jenkins bash
+/usr/local/bin/jenkins.sh
+# http://localhost:18080

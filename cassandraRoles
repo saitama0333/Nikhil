@@ -1,0 +1,64 @@
+your roles and responsibilities will be
+1) Cassandra node
+2) cluster set up (standalone and cluster) 
+3) Schema creation as well
+4) cluster maintenance​
+5) like data backup
+6) nodetool clean up
+7) db snapshot
+8) cluster status and health monitoring..
+
+ for Kafka same think will be applicable
+along with that topic creation and maintenance​
+ for example
+assume we have 10 nodes in a cluster
+this is suffice for normal traffic
+in case we have high traffic
+that time we can add extra nodes in cluster
+for data balance across all nodes and to clean garbage (tombstones)
+
+tombstone --> garbage value, every delete goes here-- tombstone is specific data stored alongside standard data.---it has built-in expiration date/time--and cleared during cassandra compaction
+ 
+we need to run nodetool clean up and compaction
+these things are cluster manintance
+also
+data will be written in mem cache first
+these values can be synced to disk using nodetool
+these related activites as are comes cluster management
+basically
+our cluster should be always neat and clean
+for this purpose we need to be use some commands from noodetool
+just read description of nodetool commands
+that will be given enough knowledge to u
+
+compact --> merging multiple SSTables into a single new one
+
+cleanup -->  to remove unwanted data after adding a new node to the cluster. Cassandra does not automatically remove data from nodes that lose part of their partition range to a newly added node
+
+
+
+drain
+these commands are important
+you already know more about Cassandra
+ when comparing other peeps
+so nothing to worry
+take Datastax cassandra documentation.
+that will give u enough info
+for u nodetool is important
+
+
+SSTable --> is a  Storage Format
+
+kafka -- it is publish/subscribe messaging system ---To handle realtime data feeds, high thorughput high volume of data
+	-real time processing of this high data feeds
+	
+-	data(messages) is stored in topics
+-	topics are split into partitions which is later replicated( for HA and fault-tolerant)
+
+
+partition ---reduces latency and increases performance.---done parallely---topics are divided into multiple partitions
+
+replication --each partition can have multiple replicas, stored on a different broker.
+
+java Heap space is used by java runtime to allocate memory
+

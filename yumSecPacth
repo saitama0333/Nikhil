@@ -1,0 +1,10 @@
+Yum Update for security:
+
+
+#sudo yum list --security
+#sudo yum  --security update
+#sudo yum -y install yum-plugin-security
+#yum --security check-update
+#sudo yum --security update
+#sudo init 6
+

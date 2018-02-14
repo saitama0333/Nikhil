@@ -1,0 +1,44 @@
+what are your day to day activities
+solving tickets related with service requests, issues, troubleshooting, instalation and configuration, maintenance, pathcing
+
+
+what is kafka
+kafka is a messaging system which follows publiush/subscribe method.. it is used to process realtime data.
+
+what is cassandra-
+cassandra is a noSQL database..its free and supports HA
+
+how to add a new node to existing cassandra cluster
+how can we use jenkins to launch a server, and add it automatically in existing cassandra cluster
+what is seeds?
+are you familier with nodetool  --> it is a tool by which we manage cassandra by cli
+
+what is zookeeper ? wat if we dont use zookeeper? If i have 4 node kafka cluster, how many zookeeper should I have?
+
+kafka --> create topic, delete topi, partitions, replication, how to increase replication of exisitng topic
+
+how long does it take for a new node to be part of cassandra cluster
+nodetool flush /drain diff
+nodetool cleanup
+nodetool compact
+nodetool repair
+
+what all do you do for configuring cassandra --? performace tuning, limits.conf, sysctl, monitoring , piops, sync time
+
+tombstone in cassandra --> garbage entries in cassandra db...how wil you remove it
+
+cluster status and health monitoring---> how wil you do it
+
+*************
+what is use of replication in kafka
+what if data is replicated across 3 nodes only I have cluster of 7 nodes
+what is  broker? producer? consumer? topics?  how wil you test it
+
+
+s3 lifecycle -
+s3 lifecycle for sub folders
+ASG
+IAM roles--
+policy basics
+DR
+/dev/sda1 --root partition

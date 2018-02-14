@@ -1,0 +1,12 @@
+YUM USEFUL COMMANDS:
+
+
+->yum list available
+shows available pacakges
+ex. #yum list available | grep -i java
+
+->yum list  installed
+Shows version of installed packages 
+Ex. #yum list  installed | grep -i java
+
+

@@ -1,0 +1,51 @@
+Url: ci.ednovo.org
+
+Synopsis:
+How to build using pre-defined projects using jenkins
+Configure new projects
+
+How to build using pre-defined projects using jenkins:
+In general, to trigger a build we need two mandatory items.
+Clear view on environment in which we are going to trigger build
+Branch name / tag
+ 
+Once environment is known, choose the apt project name either from ALL tab or from respective environment tab. for example: QA-API-V2
+Usually name pattern which we use is in the format ENV_NAME-MODULE_NAME
+Clear workspace by clicking on workspace available under left side bar and select “Wipe out current workspace”. This option is to clear previous project files
+After clearing workspace, select Configure
+From configure page, provide proper branch name / tag under “Branches to Build” column
+After entering branch name / tag, click save.
+Once our changes are saved, click “Build now” to trigger a build
+Your build will get triggered within some seconds (If you are triggering it on master server) - Let’s see about build using master / slave server later in this document.
+You can see the triggered build status under “Build History” and click on Console Output to view build logs
+We can also see build success / failure messages under this field.
+
+Build procedure / method for APP module: (Only for APP module)
+Before triggering APP module build, we should clear workspace and build “Config-files” in order to update filter properties files for APP module.
+Once COnfig-files build is done, same procedure is to be followed to build APP module (Updating branch / tag and save and trigger build)
+
+FYI: Search / Index modules has jenkins build. But we don’t use them. Since search / index build should be performed manually on it server which has old os (13.10 v). As we asked our developers regarding this and they said it has some version dependencies.
+
+Configure new project:
+Unique project name
+Project repository URL with credentials (if it is private repo)
+Maven build commands
+S3 bucket path to store war files
+Mailing list (To notify about the build status - if needed)
+Steps to configure new maven project:
+To configure a new project, select “New Item” which is available at left side panel
+Enter the item name, which is your unique project name and click “Maven project” radio button then click OK to create a new maven project (It will be available under ALL category
+Write the description based on the environment (only for our understanding)
+Select “Discard old builds” option and enter the value as “5” under “Max # of Builds to keep” (So that it will keep only last 5 builds in build history)
+Next, select “Enable project based security” (Here we can configure the jenkins accessibility based on group created)
+Then select “Restrict where this project can be run” and type as master under the Label expression column if you’re planning to execute build operation on same server (Usually master is preferred for the  builds which takes less time)
+We can also mention some label expressions (to perform build operations on slave server. Those slave servers will be launched using our predefined AMIs which is preloaded under Manage Jenkins > Configure system
+Under source code management, choose git as our source and type the repository URL and credentials (if not available, then  add it)
+Provide Branches to build details to fetch the code
+Deselect the option Build whenever a SNAPSHOT dependency is built
+Under Build environment, select Delete workspace before build starts (to clear workspace)
+Add build commands steps and s3 bucket war file sync commands under post steps > Execute shell
+Under Build settings enable Email notification, if needed
+At last click save button to save the project
+
+

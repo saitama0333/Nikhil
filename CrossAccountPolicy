@@ -1,0 +1,85 @@
+AWS user cross account policy to allow s3 from another account:
+-we are doing this using CLI
+
+
+Q--> User nikhil wants to access s3 objects from bucket "darky" which is in "production" account
+
+
+1] Create a user "nikhil" in account "netops"
+2] Create Access Key & Secret Access Key of nikhil, configure at your machine (aws configure)
+3] In second account, i.e., "production":
+	a) Create S3 Policy such that, it has access "ListAccess" to all the buckets and full access to "darky" bucket.
+----------------------------------------------------------------------------------
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListAllMyBuckets"
+            ],
+            "Resource": [
+                "arn:aws:s3:::*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::gooru-40-oneroster",
+                "arn:aws:s3:::gooru-40-oneroster/*"
+            ]
+        }
+    ]
+}
+----------------------------------------------------------------------------------
+	b) Create a new role, select cross-account role ( or Another AWS account), enter the account id of "netops"
+	c) Add the policy you created to the new role. Capture the Role ARN (Ex.: arn:aws:iam::427942460508:role/CrossAccountS3)
+	d) Now you can see the "Trust Relationship" between both the account
+4] Log into your netops account, create new inline policy for user "nikhil"
+	Ex.:
+----------------------------------------------------------------------------------
+{
+    "Version": "2012-10-17",
+    "Statement": {
+        "Effect": "Allow",
+        "Action": "sts:AssumeRole",
+        "Resource": "arn:aws:iam::427942460508:role/CrossAccountS3-Sachin"
+    }
+}	
+----------------------------------------------------------------------------------
+
+5] Goto Linux terminal:
+	#aws sts assume-role --role-arn "arn:aws:iam::427942460508:role/CrossAccountS3" --role-session-name "blazeclan-test"
+	-session name can be anything.
+6] You will get output as below"
+----------------------------------------------------------------------------------
+{
+    "AssumedRoleUser": {
+        "Arn": "arn:aws:sts::427942460508:assumed-role/CrossAccountS3/blazeclan-test",
+        "AssumedRoleId": "AROAJLDLENTFHHUKVVLYI:blazeclan-test"
+    },
+    "Credentials": {
+        "SessionToken": "FQoDYXdzEL7//////////wEaDFyynBYGwUT2WYkbPyLRAbrm0+JC74ILzobwm+hfKpQvr+IM23eVHgEdwFOd2yxo014gZeKkol/uprL54HhWBHhdAeyJm+r/HsMBNsN/iFAj2RN4nvSt92rrkDI/F+PhqyIM0xMoxVM/BkzrD9FyjUXsrZmAjeAO6I2vCYvKbHLNe+vVm+G1Ml2ghdrdQs3Perskk83IaakM+tXegTYLoLungQkm9xrbWoEYB2/G9vZOVF/QijLS0yuQN19k2z/F5StDazL5YkKKUDYAztC8gATxrq0F+FSQV2tmkNhzqC/uKJ/f1M0F",
+        "Expiration": "2017-09-10T13:27:11Z",
+        "AccessKeyId": "ASIAIYZ2MIODLVYKL4UQ",
+        "SecretAccessKey": "nz38zz2ddH/2IMXqzBBQOI1XkS3nmCGtErGfMt1Q"
+    }
+}
+----------------------------------------------------------------------------------
+7] Now, you cannot just configure above entries in "#aws configure" , as it doesnt support session token
+8] Open file /home/sherlock/.aws/config --> enter as below:
+----------------------------------------------------------------------------------
+[default]
+role_arn=arn:aws:iam::427942460508:role/CrossAccountS3-Sachin
+source_profile = default
+region = us-west-1
+set AWS_ACCESS_KEY_ID=ASIAIYZ2MIODLVYKL4UQ
+set AWS_SECRET_ACCESS_KEY=nz38zz2ddH/2IMXqzBBQOI1XkS3nmCGtErGfMt1Q
+set AWS_SESSION_TOKEN=FQoDYXdzEL7//////////wEaDFyynBYGwUT2WYkbPyLRAbrm0+JC74ILzobwm+hfKpQvr+IM23eVHgEdwFOd2yxo014gZeKkol/uprL54HhWBHhdAeyJm+r/HsMBNsN/iFAj2RN4nvSt92rrkDI/F+PhqyIM0xMoxVM/BkzrD9FyjUXsrZmAjeAO6I2vCYvKbHLNe+vVm+G1Ml2ghdrdQs3Perskk83IaakM+tXegTYLoLungQkm9xrbWoEYB2/G9vZOVF/QijLS0yuQN19k2z/F5StDazL5YkKKUDYAztC8gATxrq0F+FSQV2tmkNhzqC/uKJ/f1M0F
+----------------------------------------------------------------------------------
+
+
+

@@ -1,0 +1,40 @@
+#sudo add-apt-repository -y ppa:webupd8team/java
+#sudo apt-get update
+#sudo apt-get -y install oracle-java8-installer
+
+#wget http://static.druid.io/artifacts/releases/druid-0.10.1-bin.tar.gz
+#sudo tar -xvzf druid-0.10.1-bin.tar.gz
+
+#sudo apt install postgresql
+#sudo su  postgres
+#createuser druid -P (when prompted, Entered password as "diurd") 
+#createdb druid -O druid (created DB with name "druid")
+->you can log out from postgres user now
+
+#sudo systemctl start zookeeperd 
+-check version installed --> #apt-cache policy zookeeper
+Installed Version: 3.4.8-1
+
+#cd druid-0.10.1/
+#bin/init 
+
+
+**********TO START DRUID***********
+--> Run in diff. terminal <--
+
+#java `cat conf-quickstart/druid/historical/jvm.config | xargs` -cp "conf-quickstart/druid/_common:conf-quickstart/druid/historical:lib/*" io.druid.cli.Main server historical
+
+#java `cat conf-quickstart/druid/broker/jvm.config | xargs` -cp "conf-quickstart/druid/_common:conf-quickstart/druid/broker:lib/*" io.druid.cli.Main server broker
+
+#java `cat conf-quickstart/druid/coordinator/jvm.config | xargs` -cp "conf-quickstart/druid/_common:conf-quickstart/druid/coordinator:lib/*" io.druid.cli.Main server coordinator
+
+#java `cat conf-quickstart/druid/overlord/jvm.config | xargs` -cp "conf-quickstart/druid/_common:conf-quickstart/druid/overlord:lib/*" io.druid.cli.Main server overlord
+
+#java `cat conf-quickstart/druid/middleManager/jvm.config | xargs` -cp "conf-quickstart/druid/_common:conf-quickstart/druid/middleManager:lib/*" io.druid.cli.Main server middleManager
+
+-change "-Xms4g" setting to 4g or more as required
+
+
+
+---If you'd like to stop the services, CTRL-C to exit from the running java processes. If you want a clean start after stopping the services, delete the var directory and run the init script again.
+
